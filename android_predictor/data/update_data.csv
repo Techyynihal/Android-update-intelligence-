@@ -1,0 +1,99 @@
+brand,model,launch_year,android_ver,ui_ver,update_months,patch_freq,next_android,next_ui,eta_months,confidence
+Samsung,Galaxy S22,2022,13,6.1,8,12,14,7.0,3,85
+Samsung,Galaxy S22,2022,14,6.1,8,12,15,7.0,2,87
+Samsung,Galaxy S23,2023,13,5.1,6,12,14,6.0,4,82
+Samsung,Galaxy S23,2023,14,6.1,6,12,15,7.0,3,86
+Samsung,Galaxy S24,2024,14,6.1,4,12,15,7.0,2,90
+Samsung,Galaxy S24 Ultra,2024,14,6.1,4,12,15,7.0,2,92
+Samsung,Galaxy A54,2023,13,5.1,10,6,14,6.0,5,75
+Samsung,Galaxy A54,2023,14,6.1,10,6,15,7.0,4,78
+Samsung,Galaxy A34,2023,13,5.1,12,6,14,6.0,6,72
+Samsung,Galaxy A14,2023,13,5.1,14,4,14,6.0,8,65
+Samsung,Galaxy S21,2021,13,5.1,12,12,14,6.0,4,80
+Samsung,Galaxy S21 FE,2022,13,5.1,12,12,14,6.0,5,78
+Samsung,Galaxy Z Fold 5,2023,13,5.1,6,12,14,6.0,3,88
+Samsung,Galaxy Z Fold 5,2023,14,6.1,6,12,15,7.0,2,89
+Samsung,Galaxy Z Flip 5,2023,13,5.1,6,12,14,6.0,3,87
+Samsung,Galaxy Z Flip 6,2024,14,6.1,4,12,15,7.0,2,91
+Google,Pixel 6,2021,13,13.0,8,12,14,14.0,2,88
+Google,Pixel 6 Pro,2021,13,13.0,8,12,14,14.0,2,89
+Google,Pixel 7,2022,13,13.0,6,12,14,14.0,1,91
+Google,Pixel 7 Pro,2022,13,13.0,6,12,14,14.0,1,92
+Google,Pixel 8,2023,14,14.0,4,12,15,15.0,1,94
+Google,Pixel 8 Pro,2023,14,14.0,4,12,15,15.0,1,95
+Google,Pixel 9,2024,14,14.0,2,12,15,15.0,1,96
+Google,Pixel 9 Pro,2024,14,14.0,2,12,15,15.0,1,97
+Google,Pixel 6a,2022,13,13.0,8,12,14,14.0,2,87
+Google,Pixel 7a,2023,13,13.0,6,12,14,14.0,1,90
+Google,Pixel 8a,2024,14,14.0,4,12,15,15.0,1,93
+OnePlus,OnePlus 12,2024,14,14.0,4,12,15,15.0,3,84
+OnePlus,OnePlus 11,2023,13,13.0,6,12,14,14.0,4,81
+OnePlus,OnePlus Nord 3,2023,13,13.1,8,6,14,14.0,5,76
+OnePlus,OnePlus Nord CE 3,2023,13,13.1,10,4,14,14.0,7,70
+OnePlus,OnePlus 10 Pro,2022,13,13.0,10,12,14,14.0,5,78
+Xiaomi,Xiaomi 14,2024,14,5.0,4,12,15,6.0,3,83
+Xiaomi,Xiaomi 14 Ultra,2024,14,5.0,4,12,15,6.0,3,85
+Xiaomi,Xiaomi 13,2023,13,5.0,6,12,14,6.0,4,80
+Xiaomi,Xiaomi 13T,2023,13,14.0,6,12,14,15.0,4,78
+Xiaomi,Xiaomi 12,2022,12,13.0,10,12,13,14.0,6,72
+Redmi,Redmi Note 13,2024,13,14.0,6,6,14,15.0,5,74
+Redmi,Redmi Note 13 Pro,2024,13,14.0,6,6,14,15.0,5,76
+Redmi,Redmi Note 12,2023,12,13.0,10,4,13,14.0,7,68
+Redmi,Redmi 13C,2023,13,14.0,8,4,14,15.0,6,65
+Redmi,Redmi A3,2024,13,14.0,10,4,14,15.0,8,60
+POCO,POCO X6 Pro,2024,14,5.0,4,12,15,6.0,4,79
+POCO,POCO X6,2024,13,14.0,6,6,14,15.0,5,75
+POCO,POCO F5,2023,13,14.0,6,12,14,15.0,5,77
+POCO,POCO M6 Pro,2024,13,14.0,8,4,14,15.0,6,68
+Realme,Realme GT 5 Pro,2024,14,5.0,4,12,15,6.0,4,80
+Realme,Realme 12 Pro+,2024,14,5.0,6,6,14,15.0,5,74
+Realme,Realme 11 Pro,2023,13,14.0,8,6,14,15.0,6,70
+Realme,Realme C65,2024,13,14.0,10,4,14,15.0,8,62
+iQOO,iQOO 12,2024,14,9.0,4,12,15,10.0,3,82
+iQOO,iQOO 11,2023,13,13.0,6,12,14,14.0,4,78
+iQOO,iQOO Neo 9,2024,14,9.0,6,6,15,10.0,4,76
+iQOO,iQOO Z9,2024,14,9.0,8,4,14,10.0,5,70
+Vivo,Vivo X100 Pro,2024,14,9.0,4,12,15,10.0,3,83
+Vivo,Vivo X100,2024,14,9.0,4,12,15,10.0,3,82
+Vivo,Vivo V30 Pro,2024,14,9.0,6,6,14,10.0,4,76
+Vivo,Vivo Y200,2024,13,9.0,8,4,14,10.0,6,68
+Vivo,Vivo Y100,2023,13,13.0,10,4,14,14.0,7,64
+Vivo,Vivo T3x,2024,14,9.0,8,4,14,10.0,6,67
+OPPO,OPPO Find X7 Ultra,2024,14,14.0,4,12,15,15.0,3,84
+OPPO,OPPO Find X7,2024,14,14.0,4,12,15,15.0,3,83
+OPPO,OPPO Reno 11 Pro,2024,14,14.0,6,6,14,15.0,4,76
+OPPO,OPPO Reno 10,2023,13,13.1,8,6,14,14.1,5,72
+OPPO,OPPO A79,2024,13,13.1,10,4,14,14.1,7,64
+Huawei,Huawei Mate 60 Pro,2023,12,13.0,6,6,13,14.0,8,60
+Huawei,Huawei P60 Pro,2023,12,13.0,8,6,13,14.0,9,58
+Huawei,Nova 12 Pro,2024,12,13.0,6,4,13,14.0,8,55
+Honor,Honor Magic 6 Pro,2024,14,8.0,4,12,15,9.0,3,81
+Honor,Honor 90,2023,13,7.1,6,6,14,8.0,4,75
+Honor,Honor X9b,2024,13,8.0,8,4,14,9.0,5,70
+Motorola,Moto G84,2023,13,13.0,8,6,14,14.0,5,72
+Motorola,Moto G54,2023,13,13.0,10,4,14,14.0,6,68
+Motorola,Edge 40 Pro,2023,13,13.0,6,12,14,14.0,4,77
+Motorola,Edge 50 Pro,2024,14,14.0,4,12,15,15.0,3,80
+Motorola,Moto G Power 2024,2024,14,14.0,8,4,14,14.0,6,65
+Tecno,Tecno Spark 20 Pro,2024,13,14.0,8,4,14,15.0,7,62
+Tecno,Tecno Camon 30 Pro,2024,14,14.0,6,6,14,15.0,5,68
+Tecno,Tecno Phantom V Fold,2024,14,14.0,6,6,15,15.0,5,70
+Infinix,Infinix Zero 30,2023,13,13.0,8,4,14,14.0,7,63
+Infinix,Infinix Note 40 Pro,2024,14,14.0,6,4,14,15.0,5,67
+Infinix,Infinix Hot 40 Pro,2024,13,13.0,10,4,14,14.0,8,60
+Nothing,Nothing Phone 2,2023,13,2.0,6,12,14,3.0,3,82
+Nothing,Nothing Phone 2a,2024,14,2.5,4,12,15,3.0,2,84
+Nothing,Nothing Phone 1,2022,12,1.5,10,12,13,2.0,6,75
+Sharp,Aquos R8,2023,13,13.0,8,6,14,14.0,5,70
+Sharp,Aquos Sense 8,2023,13,13.0,10,4,14,14.0,6,65
+Samsung,Galaxy M54,2023,13,5.1,8,6,14,6.0,6,73
+Samsung,Galaxy F54,2023,13,5.1,10,4,14,6.0,7,68
+Google,Pixel Fold,2023,13,13.0,6,12,14,14.0,2,90
+OnePlus,OnePlus Open,2023,13,13.1,6,12,14,14.0,3,85
+Xiaomi,Xiaomi Mix Fold 3,2023,13,14.0,6,12,14,15.0,4,80
+OPPO,OPPO Find N3,2023,13,13.1,6,12,14,14.1,4,81
+Vivo,Vivo X Fold 3,2024,14,9.0,4,12,15,10.0,3,84
+Samsung,Galaxy S23 FE,2023,13,5.1,8,6,14,6.0,5,78
+Samsung,Galaxy A55,2024,14,6.1,6,12,15,7.0,3,82
+Redmi,Redmi Note 13 Pro+,2024,13,14.0,5,6,14,15.0,4,78
+POCO,POCO X5 Pro,2023,13,14.0,8,6,14,15.0,5,73

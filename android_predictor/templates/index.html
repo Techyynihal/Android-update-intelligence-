@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DroidSense AI — Android Update Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Animated BG -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="noise-overlay"></div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-area">
+        <div class="logo-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="url(#grad1)" stroke-width="2"/>
+            <path d="M16 18 Q24 10 32 18 L32 34 Q24 38 16 34 Z" fill="url(#grad2)" opacity="0.8"/>
+            <circle cx="19" cy="21" r="2" fill="#00d4ff"/>
+            <circle cx="29" cy="21" r="2" fill="#00d4ff"/>
+            <path d="M14 16 L10 12 M34 16 L38 12" stroke="#7b2ff7" stroke-width="2" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="grad1" x1="0" y1="0" x2="48" y2="48">
+                <stop offset="0%" stop-color="#00d4ff"/>
+                <stop offset="100%" stop-color="#7b2ff7"/>
+              </linearGradient>
+              <linearGradient id="grad2" x1="0" y1="0" x2="48" y2="48">
+                <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#7b2ff7" stop-opacity="0.4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">DroidSense<span class="accent">AI</span></span>
+          <span class="logo-sub">Android Update Intelligence</span>
+        </div>
+      </div>
+      <div class="header-badge">
+        <span class="pulse-dot"></span>
+        <span>ML Engine Active</span>
+      </div>
+    </div>
+    <div class="header-tagline">
+      <p>Predict your next Android &amp; UI update with <em>machine learning precision</em></p>
+    </div>
+  </header>
+
+  <!-- ═══ MAIN ═══ -->
+  <main class="main-content">
+
+    <!-- Input Panel -->
+    <section class="input-panel glass-card">
+      <div class="panel-header">
+        <h2>Device Intelligence Input</h2>
+        <span class="panel-tag">SCAN YOUR DEVICE</span>
+      </div>
+
+      <div class="form-grid">
+
+        <div class="field-group">
+          <label for="brand-select">
+            <span class="field-icon">◈</span> Mobile Brand
+            <span class="tooltip-trigger" data-tip="Select your smartphone manufacturer">?</span>
+          </label>
+          <select id="brand-select" class="styled-select">
+            <option value="">— Select Brand —</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="model-select">
+            <span class="field-icon">◈</span> Mobile Model
+            <span class="tooltip-trigger" data-tip="Select your exact device model">?</span>
+          </label>
+          <select id="model-select" class="styled-select" disabled>
+            <option value="">— Select Model —</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="android-select">
+            <span class="field-icon">◈</span> Current Android Version
+            <span class="tooltip-trigger" data-tip="Your current Android OS version number">?</span>
+          </label>
+          <select id="android-select" class="styled-select">
+            <option value="10">Android 10</option>
+            <option value="11">Android 11</option>
+            <option value="12">Android 12</option>
+            <option value="13">Android 13</option>
+            <option value="14" selected>Android 14</option>
+            <option value="15">Android 15</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="ui-input">
+            <span class="field-icon">◈</span> Current UI Version
+            <span class="tooltip-trigger" data-tip="Your current UI overlay version (e.g. One UI 6.1, OxygenOS 14)">?</span>
+          </label>
+          <input type="text" id="ui-input" class="styled-input" placeholder="e.g. One UI 6.1 / OxygenOS 14" />
+          <span class="ui-hint" id="ui-hint"></span>
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+        <button id="predict-btn" class="predict-btn" disabled>
+          <span class="btn-glow"></span>
+          <span class="btn-icon">⚡</span>
+          <span class="btn-text">Predict Update</span>
+          <span class="btn-pulse"></span>
+        </button>
+        <button id="reset-btn" class="reset-btn">
+          <span>↺</span> Reset
+        </button>
+      </div>
+    </section>
+
+    <!-- Skeleton Loader -->
+    <section class="skeleton-loader" id="skeleton" style="display:none">
+      <div class="skel-card"></div>
+      <div class="skel-card"></div>
+      <div class="skel-card"></div>
+      <div class="skel-card"></div>
+    </section>
+
+    <!-- Results Dashboard -->
+    <section class="results-dashboard" id="results" style="display:none">
+
+      <!-- Device Identity Bar -->
+      <div class="device-identity">
+        <div class="brand-icon-wrap">
+          <span class="brand-icon-letter" id="result-brand-initial">S</span>
+        </div>
+        <div class="device-info">
+          <h3 id="result-device-name">Samsung Galaxy S24</h3>
+          <span id="result-android-current">Running Android 14</span>
+        </div>
+        <div class="prediction-badge">
+          <span>PREDICTION READY</span>
+        </div>
+      </div>
+
+      <!-- Top Cards Row -->
+      <div class="cards-grid">
+
+        <!-- Android Version Card -->
+        <div class="result-card card-android reveal">
+          <div class="card-accent-bar"></div>
+          <div class="card-header-row">
+            <span class="card-label">Next Android</span>
+            <span class="card-icon">🤖</span>
+          </div>
+          <div class="card-value" id="next-android">—</div>
+          <div class="card-sub">Operating System Upgrade</div>
+          <div class="card-tooltip">Major Android release with new APIs and security architecture</div>
+        </div>
+
+        <!-- UI Version Card -->
+        <div class="result-card card-ui reveal">
+          <div class="card-accent-bar"></div>
+          <div class="card-header-row">
+            <span class="card-label">Next UI Layer</span>
+            <span class="card-icon">🎨</span>
+          </div>
+          <div class="card-value" id="next-ui">—</div>
+          <div class="card-sub">Manufacturer Interface</div>
+          <div class="card-tooltip">Brand's custom Android skin with exclusive features</div>
+        </div>
+
+        <!-- ETA Card -->
+        <div class="result-card card-eta reveal">
+          <div class="card-accent-bar"></div>
+          <div class="card-header-row">
+            <span class="card-label">Estimated Arrival</span>
+            <span class="card-icon">🕐</span>
+          </div>
+          <div class="card-value" id="eta-val">—</div>
+          <div class="card-sub">Time Until Update</div>
+          <div class="card-tooltip">ML-estimated months until update rolls out to your device</div>
+        </div>
+
+        <!-- Security Patch Card -->
+        <div class="result-card card-security reveal">
+          <div class="card-accent-bar"></div>
+          <div class="card-header-row">
+            <span class="card-label">Security Patch</span>
+            <span class="card-icon">🛡️</span>
+          </div>
+          <div class="card-value small-val" id="security-val">—</div>
+          <div class="card-sub">Monthly Security Update</div>
+          <div class="card-tooltip">Estimated next monthly security patch delivery timeline</div>
+        </div>
+
+      </div>
+
+      <!-- Confidence + Likelihood Row -->
+      <div class="metrics-row">
+
+        <!-- Confidence Meter -->
+        <div class="confidence-card glass-card reveal">
+          <h3 class="metric-title">
+            <span>◉</span> Prediction Confidence
+            <span class="tooltip-trigger" data-tip="ML model confidence based on historical patterns">?</span>
+          </h3>
+          <div class="radial-wrap">
+            <svg class="radial-gauge" viewBox="0 0 160 160">
+              <circle class="gauge-bg" cx="80" cy="80" r="60" />
+              <circle class="gauge-fill" id="gauge-circle" cx="80" cy="80" r="60"
+                stroke-dasharray="377" stroke-dashoffset="377" />
+              <text class="gauge-text" id="gauge-text" x="80" y="80">0%</text>
+              <text class="gauge-label" x="80" y="98">CONFIDENCE</text>
+            </svg>
+          </div>
+          <div class="confidence-bar-wrap">
+            <div class="confidence-bar">
+              <div class="confidence-fill" id="conf-bar" style="width:0%"></div>
+            </div>
+            <span class="conf-pct" id="conf-pct">0%</span>
+          </div>
+        </div>
+
+        <!-- Likelihood Rating -->
+        <div class="likelihood-card glass-card reveal">
+          <h3 class="metric-title">
+            <span>◈</span> Update Likelihood
+            <span class="tooltip-trigger" data-tip="Overall likelihood rating for receiving this update">?</span>
+          </h3>
+          <div class="likelihood-display">
+            <div class="likelihood-ring" id="likelihood-ring">
+              <span class="likelihood-text" id="likelihood-label">—</span>
+            </div>
+            <div class="likelihood-dots" id="likelihood-dots">
+              <span class="ldot active"></span>
+              <span class="ldot active"></span>
+              <span class="ldot active"></span>
+            </div>
+            <p class="likelihood-desc" id="likelihood-desc">Analyzing update history...</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Features Panel -->
+      <div class="features-panel glass-card reveal">
+        <h3 class="panel-title">
+          <span class="title-accent">⬡</span>
+          Expected New Features
+          <span class="tooltip-trigger" data-tip="Predicted features based on brand roadmap analysis">?</span>
+        </h3>
+        <div class="features-grid" id="features-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Update Timeline -->
+      <div class="timeline-panel glass-card reveal">
+        <h3 class="panel-title">
+          <span class="title-accent">⟳</span>
+          Update Journey Timeline
+        </h3>
+        <div class="timeline-track">
+          <div class="timeline-step done">
+            <div class="step-dot"></div>
+            <div class="step-info">
+              <span class="step-label">History</span>
+              <span class="step-val" id="hist-2">—</span>
+            </div>
+          </div>
+          <div class="timeline-line"></div>
+          <div class="timeline-step done">
+            <div class="step-dot"></div>
+            <div class="step-info">
+              <span class="step-label">Previous</span>
+              <span class="step-val" id="hist-1">—</span>
+            </div>
+          </div>
+          <div class="timeline-line"></div>
+          <div class="timeline-step current">
+            <div class="step-dot"></div>
+            <div class="step-info">
+              <span class="step-label">Current</span>
+              <span class="step-val" id="hist-0">—</span>
+            </div>
+          </div>
+          <div class="timeline-line future-line"></div>
+          <div class="timeline-step future">
+            <div class="step-dot future-dot"></div>
+            <div class="step-info">
+              <span class="step-label">Predicted Next</span>
+              <span class="step-val" id="timeline-next">—</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Error Toast -->
+  <div class="toast" id="error-toast">
+    <span class="toast-icon">⚠</span>
+    <span class="toast-msg" id="toast-msg">An error occurred</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">DroidSense<span class="accent">AI</span></span>
+        <span class="footer-version">v2.0.0 — ML Edition</span>
+      </div>
+      <div class="footer-links">
+        <span>Powered by Random Forest ML</span>
+        <span class="sep">|</span>
+        <span>Flask + scikit-learn</span>
+        <span class="sep">|</span>
+        <span>© 2025 DroidSense</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
